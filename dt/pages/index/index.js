@@ -81,16 +81,6 @@ Page({
             }
           })
   },
-  goPersonal:function(){
-    wx.navigateTo({
-      url: '../personal/personal',
-    })
-  },
-  checkDt:function(event){
-    wx.navigateTo({
-      url: '../dtAnswer/dtAnswer?id=' + event.target.id
-    })
-  },
   onReachBottom: function () {
     console.log(1);
     var data = this.data.dtList;

@@ -52,8 +52,8 @@
 
     </view>
 
-  <view class="personal" bindtap="goPersonal">
-  <view>用户</view>
+  <view class="personal">
+  <view><button class="service" open-type="contact">客服</button></view>
   </view>
 
 </view>

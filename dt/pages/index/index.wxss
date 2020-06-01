@@ -136,3 +136,13 @@ page {
 .section .card{
   margin-bottom: 20rpx;
 }
+.service{
+display: inline;
+font-size: 30rpx;
+text-align: center;
+width: auto;
+margin: 0;
+padding: 0;
+font-weight: normal;
+line-height: 120rpx;
+}

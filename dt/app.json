@@ -6,7 +6,9 @@
     "pages/fackTk/fackTk",
     "pages/personal/personal",
     "pages/dtAnswer/dtAnswer",
-    "pages/orderOn/orderOn"
+    "pages/orderOn/orderOn",
+    "pages/getUserInfo/getUserInfo",
+    "pages/getPhone/getPhone"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -65,21 +65,23 @@ Page({
       }
     }
   },
-  getUserInfoFun: function (event){
+  goOrder:function(){
+
     var that = this;
     console.log(this.globalData)
-          wx.getUserInfo({
-            success: function (res) {
-              console.log(res)
-              app.globalData.userInfo = res.userInfo
-              wx.navigateTo({
-                url: '../orderOn/orderOn'
-              })
-            },
-            fail: function (res) {
-              console.log(res)
-            }
-          })
+    if (app.globalData.userInfo && app.globalData.iv) {
+      wx.navigateTo({
+        url: '../orderOn/orderOn'
+      })
+    } else if (!app.globalData.userInfo){
+      wx.navigateTo({
+        url: '../getUserInfo/getUserInfo',
+      })
+    }else{
+      wx.navigateTo({
+        url: '../getPhone/getPhone',
+      })
+    }
   },
   onReachBottom: function () {
     console.log(1);

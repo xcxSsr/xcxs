@@ -1,0 +1,4 @@
+<!--pages/getUserInfo/getUserInfo.wxml-->
+
+    <button open-type="getUserInfo" hover-class='none' bindgetuserinfo="getUserInfoFun">
+    授权用户信息 </button> 

@@ -16,8 +16,7 @@
 <view class="section">
   <view class="flex-wrp" style="flex-direction:row;">
     <view class="flex-item  card" bindtap="goOrder" id='real'>
-    <button open-type="getUserInfo" hover-class='none' bindgetuserinfo="getUserInfoFun">
-    <label>立即下单  <text>\n 1小时取件</text> </label> </button> 
+    <label>立即下单  <text>\n 1小时取件</text> </label> 
     </view>
   </view>
 </view>

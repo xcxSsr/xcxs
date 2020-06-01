@@ -7,12 +7,10 @@
 .flex-wrp {display: flex;}
 .flex-wrp>.flex-item{
 flex:1; height: 100px;margin:0 5rpx;
+text-align: center;
+line-height: 40px;
+padding-top: 10px;
 position: relative;
-}
-.flex-item label{
-  position: absolute;
-  bottom: 10rpx;
-  right: 10rpx;
 }
 .flex-item text{
   font-size: 50rpx;
@@ -122,9 +120,10 @@ page {
   padding: 20rpx;
 }
 .personal{
-  width: 160rpx;
-  height: 160rpx;
-  background: #1AAD19;
+  width: 120rpx;
+  border: 1rpx solid #d7d7d7;
+  background: #fff;
+  height: 120rpx;
   border-radius: 200rpx;
   position: fixed;
   bottom: 100rpx;

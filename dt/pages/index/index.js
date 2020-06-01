@@ -28,20 +28,43 @@ Page({
         time: '2020-05-22'
       }]
   },
-  onLoad:function(){
-    console.log(this.data)
-  },
-  goTk: function (event){
-    if (event.target.id=='real'){
-      wx.navigateTo({
-        url: '../realTk/realTk',
-      })
-    } else {
-      wx.navigateTo({
-        url: '../fackTk/fackTk',
-      })
-
+  onLoad: function (options) {
+    console.log(options)
+    wx.setNavigationBarTitle({
+      title: '首页'
+    })
+    wx.showShareMenu({
+      withShareTicket: true,
+      success: function (res) {
+        // 分享成功
+        console.log(res)
+      },
+      fail: function (res) {
+        // 分享失败
+        console.log(res)
+      }
+    })
+  }, 
+  onShareAppMessage: function () {
+    return {
+      title: '这里是小程序',
+      path: '/pages/index/index?id=123',
+      success: function (res) {
+        console.log(res.shareTickets[0])
+        wx.getShareInfo({
+          shareTicket: res.shareTickets[0],
+          success: function (res) { console.log(res) },
+          fail: function (res) { console.log(res) },
+          complete: function (res) { console.log(res) }
+        })
+      },
+      fail: function (res) {
+        // 分享失败
+        console.log(res)
+      }
     }
+  },
+  goInvite: function (event){
    
   },
   goPersonal:function(){

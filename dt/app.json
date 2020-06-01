@@ -5,7 +5,8 @@
     "pages/realTk/realTk",
     "pages/fackTk/fackTk",
     "pages/personal/personal",
-    "pages/dtAnswer/dtAnswer"
+    "pages/dtAnswer/dtAnswer",
+    "pages/orderOn/orderOn"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -39,8 +40,7 @@
       }
     ]
   },
-  "usingComponents": {
-    },
+  "usingComponents": {},
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

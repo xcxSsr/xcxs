@@ -11,6 +11,7 @@ Page({
     circular:true,
     autoplay: true,
     interval: 2000,
+    userInfo:'',
     duration: 500,
     dtList:[{
       title:'随机答题',
@@ -64,8 +65,21 @@ Page({
       }
     }
   },
-  goInvite: function (event){
-   
+  getUserInfoFun: function (event){
+    var that = this;
+    console.log(this.globalData)
+          wx.getUserInfo({
+            success: function (res) {
+              console.log(res)
+              app.globalData.userInfo = res.userInfo
+              wx.navigateTo({
+                url: '../orderOn/orderOn'
+              })
+            },
+            fail: function (res) {
+              console.log(res)
+            }
+          })
   },
   goPersonal:function(){
     wx.navigateTo({

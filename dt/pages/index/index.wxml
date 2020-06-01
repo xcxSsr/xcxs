@@ -1,0 +1,52 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="page-body">
+
+    <view class="page-section page-section-spacing swiper">
+      <swiper indicator-dots="{{indicatorDots}}" circular="{{circular}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item>
+            <view class="swiper-item {{item}}"></view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    
+<view class="section">
+  <view class="flex-wrp" style="flex-direction:row;">
+    <view class="flex-item  card" bindtap="goTk" id='real'> <label>真题练习  <text>\n Real</text> </label> </view>
+    <view class="flex-item  card" bindtap="goTk" id='fack'> <label>随机练习 <text>\n Fack</text> </label> </view>
+  </view>
+</view>
+
+<view class="section__title">答题记录</view>
+<view class="section">
+<view class="card" wx:for="{{dtList}}">
+<view class="section__title">{{item.title}}</view>
+
+<view class="section__title">
+
+<view class="flex-wrp dt-list" style="flex-direction:row;">
+  <view class="flex-label">答题数：{{item.dtNum}}</view>
+  <view class="flex-label">错题率：{{item.ctl}}%</view>
+  <view class="flex-label">正确率：{{item.zql}}%</view>
+</view>
+
+<view class="flex-wrp dt-list" style="flex-direction:row;">
+  <view class="flex-label">答题时间：{{item.time}}</view>
+</view>
+</view>
+
+<a class="check-answer" id="{{item.id}}" bindtap="checkDt">查看答案</a>
+
+</view>
+</view>
+
+    </view>
+
+  <view class="personal" bindtap="goPersonal">
+  <view>用户</view>
+  </view>
+
+</view>

@@ -3,7 +3,6 @@
 const app = getApp()
 
 Page({
-
   data: {
     background: ['demo-text-1', 'demo-text-2', 'demo-text-3'],
     indicatorDots: true,
@@ -29,47 +28,44 @@ Page({
         time: '2020-05-22'
       }]
   },
-  onLoad: function (options) {
-    console.log(options)
+  onLoad(options) {
     wx.setNavigationBarTitle({
       title: '首页'
     })
     wx.showShareMenu({
       withShareTicket: true,
-      success: function (res) {
+      success: (res) => {
         // 分享成功
         console.log(res)
       },
-      fail: function (res) {
+      fail:(res) => {
         // 分享失败
         console.log(res)
       }
     })
   }, 
-  onShareAppMessage: function () {
+  onShareAppMessage() {
     return {
-      title: '这里是小程序',
+      title: 'DKL物流',
       path: '/pages/index/index?id=123',
-      success: function (res) {
-        console.log(res.shareTickets[0])
+      success:(res)=>{
         wx.getShareInfo({
           shareTicket: res.shareTickets[0],
-          success: function (res) { console.log(res) },
-          fail: function (res) { console.log(res) },
-          complete: function (res) { console.log(res) }
+          success: (res) => {  console.log(res) },
+          fail: (res) => {  console.log(res) },
+          complete: (res) => {  console.log(res) }
         })
       },
-      fail: function (res) {
+      fail: (res) => {
         // 分享失败
         console.log(res)
       }
     }
   },
-  goOrder:function(){
-
+  goOrder(){
     var that = this;
-    console.log(this.globalData)
-    if (app.globalData.userInfo && app.globalData.iv) {
+    var globalUserCheck = app.globalData.userInfo && app.globalData.iv;
+    if (globalUserCheck) {
       wx.navigateTo({
         url: '../orderOn/orderOn'
       })
@@ -83,8 +79,7 @@ Page({
       })
     }
   },
-  onReachBottom: function () {
-    console.log(1);
+  onReachBottom () {
     var data = this.data.dtList;
     if(data.length<=5){
       data.push({

@@ -1,4 +1,5 @@
 <!--pages/getUserInfo/getUserInfo.wxml-->
 
-    <button open-type="getUserInfo" hover-class='none' bindgetuserinfo="getUserInfoFun">
+    <button open-type="getUserInfo" wx:if="{{!getUserData}}" hover-class='none' bindgetuserinfo="getUserInfoFun">
     授权用户信息 </button> 
+<button class='pop_btn' wx:if="{{getUserData}}" plain="true" open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber">获取用户手机号</button>

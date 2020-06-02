@@ -24,20 +24,20 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "static/index-0.png",
-        "selectedIconPath": "static/index-1.png",
+        "iconPath": "images/index-0.png",
+        "selectedIconPath": "images/index-1.png",
         "text": "首页"
       },
       {
         "pagePath": "pages/order/order",
-        "iconPath": "static/hot-0.png",
-        "selectedIconPath": "static/hot-1.png",
+        "iconPath": "images/hot-0.png",
+        "selectedIconPath": "images/hot-1.png",
         "text": "我的订单"
       },
       {
         "pagePath": "pages/personal/personal",
-        "iconPath": "static/center-0.png",
-        "selectedIconPath": "static/center-1.png",
+        "iconPath": "images/center-0.png",
+        "selectedIconPath": "images/center-1.png",
         "text": "个人中心"
       }
     ]

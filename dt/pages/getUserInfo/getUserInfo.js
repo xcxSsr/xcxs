@@ -6,28 +6,42 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    getUserData:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if(app.globalData.userInfo){
+      this.setData({
+        getUserData:true
+      })
+    }
   },
   getUserInfoFun:function(){
-
+    const that = this;
     wx.getUserInfo({
       success: function (res) {
-        console.log(res)
-        app.globalData.userInfo = res.userInfo
-        wx.navigateTo({
-          url: '../getPhone/getPhone'
+        app.globalData.userInfo = res.userInfo;
+        that.setData({
+          getUserData:true
         })
       },
       fail: function (res) {
         console.log(res)
       }
+    })
+  },
+  getPhoneNumber(e) {
+    var that = this
+    var ency = e.detail.encryptedData;
+    var iv = e.detail.iv;
+    var errMsg = e.detail.errMsg;
+    app.globalData.ency = ency;
+    app.globalData.iv = iv;
+    wx.navigateBack({
+
     })
   },
   /**
